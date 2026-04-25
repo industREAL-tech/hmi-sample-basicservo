@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find \"D:\\\\GitHub\\\\industREAL.CAN.CanUtil\\\\industREAL.HMI.Sample.BasicServo\" -name \"*.cs\" ! -path \"*/obj/*\" ! -path \"*/bin/*\" -exec wc -l {} +)",
+      "WebSearch",
+      "Bash(find D:GitHub -type f -name *.csproj)",
+      "Bash(find /d/GitHub -type f \\\\\\(-name *.csproj -o -name *.cs \\\\\\))",
+      "Bash(ls -d /d/GitHub/industREAL* /d/GitHub/industreal*)",
+      "Bash(find /d/GitHub -name *.csproj -type f)",
+      "Bash(xargs grep:*)",
+      "Bash(find /d/GitHub -type f -name *.csproj -exec grep -l \"PackageReference\\\\|ItemGroup\" {})",
+      "Bash(2)",
+      "Bash(find /d/GitHub -name *Sample* -o -name *Example* -type d)",
+      "Bash(grep -r \"Claude\\\\|Anthropic\\\\|Claude.SDK\" /d/GitHub --include=*.cs --include=*.csproj)",
+      "Bash(grep -r \"OpenAI\\\\|gpt\\\\|openai\" /d/GitHub --include=*.cs --include=*.csproj)"
+    ]
+  }
+}

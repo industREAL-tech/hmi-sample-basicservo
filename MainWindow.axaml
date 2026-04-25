@@ -1,0 +1,143 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:controls="clr-namespace:industREAL.HMI.Sample.BasicServo.Controls"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="industREAL.HMI.Sample.BasicServo.MainWindow"
+        Title="industREAL.HMI.Sample.BasicServo"
+        WindowState="FullScreen"
+        SystemDecorations="None"
+        Background="#1E1E1E">
+
+    <Grid>
+
+    <!-- Background branding layer — logo rotated vertical on the right -->
+    <Panel HorizontalAlignment="Center"
+           VerticalAlignment="Bottom"
+           Width="60"
+           Margin="0,0,10,0"
+           ClipToBounds="False"
+           IsHitTestVisible="False">
+        <Image x:Name="BrandingLogo"
+               Width="600"
+               Opacity="0.3"
+               Stretch="Uniform"
+               RenderTransformOrigin="0.5,0.5">
+            <Image.RenderTransform>
+                <RotateTransform Angle="0" />
+            </Image.RenderTransform>
+        </Image>
+    </Panel>
+
+    <!-- Widgets (foreground) — landscape layout -->
+    <StackPanel Orientation="Horizontal"
+                VerticalAlignment="Center" HorizontalAlignment="Center"
+                Spacing="60">
+
+        <!-- Left: Circular gauges -->
+        <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+            <!-- Outer ring: Target Position (blue) -->
+            <controls:CircularGauge x:Name="PositionGauge"
+                                    Width="420" Height="420"
+                                    Minimum="-32768" Maximum="32767"
+                                    StrokeWidth="22"
+                                    TrackBrush="#3C3C3C"
+                                    FillBrush="#0078D7" />
+
+            <!-- Inner ring: Actual Position (green/red) -->
+            <controls:CircularGauge x:Name="ActualGauge"
+                                    Width="370" Height="370"
+                                    Minimum="-32768" Maximum="32767"
+                                    StrokeWidth="22"
+                                    TrackBrush="#3C3C3C"
+                                    FillBrush="#00B894" />
+
+            <!-- Center text -->
+            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="4">
+                    <TextBlock FontSize="12" Foreground="#0078D7" Text="TARGET" VerticalAlignment="Center" />
+                    <TextBlock x:Name="TargetText"
+                               FontSize="24" FontWeight="Bold"
+                               Foreground="White" Text="0" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="4">
+                    <TextBlock FontSize="12" Foreground="#00B894" Text="ACTUAL" VerticalAlignment="Center" />
+                    <TextBlock x:Name="ActualText"
+                               FontSize="24" FontWeight="Bold"
+                               Foreground="White" Text="0" />
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+
+        <!-- Right: Linear bars + info -->
+        <StackPanel VerticalAlignment="Center" Spacing="20" Width="500">
+
+            <!-- Torque bar -->
+            <StackPanel Spacing="4">
+                <TextBlock FontSize="12" Foreground="#888888" Text="TORQUE" />
+                <Grid Height="20">
+                    <Border Background="#3C3C3C" CornerRadius="7" />
+                    <Border x:Name="TorqueBar"
+                            Background="#F39C12"
+                            CornerRadius="7"
+                            HorizontalAlignment="Left"
+                            Width="0" />
+                </Grid>
+                <TextBlock x:Name="TorqueText"
+                           FontSize="18" FontWeight="Bold"
+                           Foreground="White" Text="0" />
+            </StackPanel>
+
+            <!-- Voltage bar (0–50V) -->
+            <StackPanel Spacing="4">
+                <TextBlock FontSize="12" Foreground="#888888" Text="VOLTAGE" />
+                <Grid Height="20">
+                    <Border Background="#3C3C3C" CornerRadius="7" />
+                    <Border x:Name="VoltageBar"
+                            Background="#3498DB"
+                            CornerRadius="7"
+                            HorizontalAlignment="Left"
+                            Width="0" />
+                </Grid>
+                <TextBlock x:Name="VoltageText"
+                           FontSize="18" FontWeight="Bold"
+                           Foreground="White" Text="0.0 V" />
+            </StackPanel>
+
+            <!-- Temperature bar (-20 to 80°C) -->
+            <StackPanel Spacing="4">
+                <TextBlock FontSize="12" Foreground="#888888" Text="TEMPERATURE" />
+                <Grid Height="20">
+                    <Border Background="#3C3C3C" CornerRadius="7" />
+                    <Border x:Name="TempBar"
+                            Background="#E67E22"
+                            CornerRadius="7"
+                            HorizontalAlignment="Left"
+                            Width="0" />
+                </Grid>
+                <TextBlock x:Name="TempText"
+                           FontSize="18" FontWeight="Bold"
+                           Foreground="White" Text="0.0 °C" />
+            </StackPanel>
+
+            <!-- Motor current -->
+            <TextBlock x:Name="CurrentText"
+                       FontSize="16"
+                       Foreground="#888888"
+                       Text="Current: — mA"
+                       Margin="0,10,0,0" />
+
+            <!-- Last seen timestamp -->
+            <TextBlock x:Name="LastSeenText"
+                       FontSize="16"
+                       Foreground="#888888"
+                       Text="Last seen: —" />
+
+        </StackPanel>
+
+    </StackPanel>
+
+    </Grid>
+
+</Window>
