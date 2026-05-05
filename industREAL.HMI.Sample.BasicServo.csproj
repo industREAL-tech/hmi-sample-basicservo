@@ -28,6 +28,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\industREAL.CAN.CANGW\industREAL.CAN.CANGW.csproj" />
     <ProjectReference Include="..\..\industreal.CAN.Devices\industREAL.CAN.Devices.csproj" />
     <ProjectReference Include="..\..\industREAL.HMI.API\industREAL.HMI.API.csproj" />
     <ProjectReference Include="..\..\industREAL.HMI.CAN\industREAL.HMI.CAN.csproj" />
