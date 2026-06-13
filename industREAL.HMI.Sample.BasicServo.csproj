@@ -22,16 +22,16 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="Resources\industreal-logo-OK.png">
+    <None Include="resources/industreal-logo-OK.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\industREAL.CAN.CANGW\industREAL.CAN.CANGW.csproj" />
-    <ProjectReference Include="..\..\industreal.CAN.Devices\industREAL.CAN.Devices.csproj" />
-    <ProjectReference Include="..\..\industREAL.HMI.API\industREAL.HMI.API.csproj" />
-    <ProjectReference Include="..\..\industREAL.HMI.CAN\industREAL.HMI.CAN.csproj" />
-    <ProjectReference Include="..\industREAL.Utils.Jotstick\industREAL.Utils.Jotstick.csproj" />
+    <PackageReference Include="industREAL.CAN.CANGW" Version="0.0.1" />
+    <PackageReference Include="industREAL.CAN.CanDevices" Version="0.0.8" />
+    <PackageReference Include="industREAL.HMI.API" Version="0.0.8" />
+    <PackageReference Include="industREAL.HMI.CAN" Version="0.1.0" />
+    <PackageReference Include="industREAL.Utils.Joystick" Version="0.0.8" />
   </ItemGroup>
 </Project>

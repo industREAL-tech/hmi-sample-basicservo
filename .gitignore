@@ -1,2 +1,7 @@
 /bin
 /obj
+
+# Local publish / debug output (do not commit)
+debug_*/
+*.zip
+publish/
